@@ -5,9 +5,16 @@ Server  >>storing certain book data
 
 This is a book management api server/ Backedn for library system or mangement of record or books or manuals
 
+
+
+
 Fine System:
 User: 06/03/2023-06/06/2023
 07/06/2023 -> 50*3=150
+
+
+
+
 
 Subscription:
 3 months:(Basic)
@@ -19,6 +26,15 @@ then it is valid till 06/06/2023
 
 withinsubscription => if we missed the rreneewal ->50 per day
 subscription date also missed =>> also missed the renewal >>100+50 per day
+
+
+
+
+>> missed by renewal data ->> 50/-
+>> missed by subscription data ->> 100/-
+>> missed by renewal + subscription  data ->> 150/-
+
+
 
 #Routes and endpoints
 ##  /users
@@ -49,6 +65,10 @@ GET: Get all book which issued
 
 ##  /books/issued/withFine
 GET: Get all issued book with their fine.
+
+
+
+## npm init
 
 
 
