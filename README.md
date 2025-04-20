@@ -70,5 +70,8 @@ GET: Get all issued book with their fine.
 
 ## npm init
 
+## npm i nodemon --save-dev
+
+
 
 

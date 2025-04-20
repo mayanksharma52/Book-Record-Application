@@ -20,8 +20,5 @@
   "homepage": "https://github.com/mayanksharma52/Book-Record-Application#readme",
   "devDependencies": {
     "nodemon": "^3.1.9"
-  },
-  "dependencies": {
-    "express": "^5.1.0"
   }
 }
