@@ -122,6 +122,32 @@ app.put("/users/:id", (req, res) => {
     });
   }
 });
+/**
+ * Routes Created /users/(id)
+ * method: DELETE
+ * description: Delete a user
+ * response: json
+ * Access: public
+ * Parameters: Id
+ */
+
+app.delete("/users/:id", (req, res) => {
+  const { id } = req.params;
+  const index = users.findIndex((each) => parseInt(each.id) === parseInt(id));
+  if (index === -1) {
+    return res.status(404).json({
+      status: false,
+      message: "user not found",
+    });
+  }
+  const deleted = users.splice(index, 1);
+  return res.status(201).json({
+    status: true,
+    message: "user deleted successfully",
+    deleteddata: deleted,
+    remainingData: users,
+  });
+});
 
 /**
  * Routes Created /books
