@@ -6,7 +6,7 @@ This is a book management api server/ Backend for library system or mangement of
 
 Fine System:
 User: 06/03/2023-06/06/2023
-07/06/2023 -> 50*3=150
+07/06/2023 -> 50 x 3=150
 
 Subscription:
 3 months:(Basic)
@@ -25,7 +25,7 @@ subscription date also missed =>> also missed the renewal >>100+50 per day
 
 #Routes and endpoints
 
-## /users  ☑️
+## /users ☑️
 
 POST: Create a new user here.
 GET: Get all the user here. >> all the user
@@ -48,7 +48,7 @@ POST: Create/Add a new book.
 ## /books/{id}
 
 GET: Get a book by id.
-POST: Create/Add a book by id.
+PUT: Update a boook by id
 
 ## /books/issued
 

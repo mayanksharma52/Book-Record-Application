@@ -1,30 +1,28 @@
 {
   "books": [
-    [
-      {
-        "id": "1",
-        "name": "The Pragmatic Programmer",
-        "author": "Andrew Hunt, David Thomas",
-        "genre": "Programming",
-        "price": 45.99,
-        "publisher": "Addison-Wesley"
-      },
-      {
-        "id": "2",
-        "name": "Atomic Habits",
-        "author": "James Clear",
-        "genre": "Self-Help",
-        "price": 19.99,
-        "publisher": "Penguin Random House"
-      },
-      {
-        "id": "3",
-        "name": "Sapiens: A Brief History of Humankind",
-        "author": "Yuval Noah Harari",
-        "genre": "History",
-        "price": 24.95,
-        "publisher": "Harper"
-      }
-    ]
+    {
+      "id": "1",
+      "name": "The Pragmatic Programmer",
+      "author": "Andrew Hunt, David Thomas",
+      "genre": "Programming",
+      "price": 45.99,
+      "publisher": "Addison-Wesley"
+    },
+    {
+      "id": "2",
+      "name": "Atomic Habits",
+      "author": "James Clear",
+      "genre": "Self-Help",
+      "price": 19.99,
+      "publisher": "Penguin Random House"
+    },
+    {
+      "id": "3",
+      "name": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "genre": "History",
+      "price": 24.95,
+      "publisher": "Harper"
+    }
   ]
 }
