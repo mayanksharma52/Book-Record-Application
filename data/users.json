@@ -38,9 +38,6 @@
       "name": "Diana",
       "surname": "Patel",
       "email": "diana.patel@example.com",
-      "isIssuedBook": 1,
-      "isIssuedDate": "2025-01-01",
-      "returnDate": "2025-01-15",
       "subscriptionType": "Standard",
       "subscriptionDate": "2025-01-01"
     },

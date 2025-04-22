@@ -2,6 +2,8 @@ const express = require("express");
 
 const { books } = require("../data/books.json");
 
+const { users } = require("../data/users.json");
+
 const router = express.Router();
 
 /**
@@ -50,6 +52,33 @@ router.post("/", (req, res) => {
     status: true,
     message: "book created successfully",
     data: books,
+  });
+});
+
+router.get("/issued", (req, res) => {
+  const userwithissuedbook = users.filter((each) => {
+    if (each.isIssuedBook) {
+      return each;
+    }
+  });
+  const issuedbook = [];
+  userwithissuedbook.forEach((each) => {
+    const book = books.find((book) => parseInt(book.id) === each.isIssuedBook);
+    book.issuedBy = each.name;
+    book.issuedDate = each.isIssuedDate;
+    book.returnDate = each.returnDate;
+
+    issuedbook.push(book);
+  });
+  if (issuedbook.length === 0) {
+    return res.status(404).json({
+      status: false,
+      message: "no book issued",
+    });
+  }
+  return res.status(200).json({
+    status: true,
+    data: issuedbook,
   });
 });
 
