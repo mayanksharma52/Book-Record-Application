@@ -134,4 +134,67 @@ router.delete("/:id", (req, res) => {
   });
 });
 
+/**
+ * Routes Created /subscription-detail/{id}
+ * method: GET
+ * description: Get a subscription detail with id
+ * response: json
+ * Access: public
+ * Parameters: Id
+ */
+
+router.get("/subscription-detail/:id", (req, res) => {
+  const { id } = req.params;
+  const user = users.find((user) => parseInt(user.id) === parseInt(id));
+  if (!user) {
+    return res.status(404).json({
+      status: false,
+      message: "user not found",
+    });
+  }
+  const getdateinDays = (data = "") => {
+    let date;
+    if (data === "") {
+      date = new Date();
+    } else {
+      date = new Date(data);
+    }
+    let days = Math.floor(date / (1000 * 60 * 60 * 24));
+    return days;
+  };
+  const subscriptionType = (date) => {
+    if (user.subscriptionDate === "Basic") {
+      date = date + 30;
+    } else if (user.subscriptionDate === "Standard") {
+      date = date + 60;
+    } else if (user.subscriptionDate === "Premium") {
+      date = date + 90;
+    }
+    return date;
+  };
+  let returnDate = getdateinDays(user.returnDate);
+  let subscriptionDate = getdateinDays(user.subscriptionDate);
+  let currentDate = getdateinDays();
+  let subscriptionExpired = subscriptionType(subscriptionDate);
+
+  const data = {
+    ...user,
+    isSubscriptionExpired: subscriptionExpired <= currentDate,
+    daysLeftForExpiration:
+      subscriptionExpired <= currentDate
+        ? 0
+        : subscriptionExpired - currentDate,
+    fine:
+      returnDate <= currentDate
+        ? subscriptionExpired <= currentDate
+          ? 100
+          : 50
+        : 0,
+  };
+  return res.status(200).json({
+    status: true,
+    data: data,
+  });
+});
+
 module.exports = router;
