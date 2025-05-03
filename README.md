@@ -61,3 +61,31 @@ GET: Get all issued book with their fine.
 ## npm init
 
 ## npm i nodemon --save-dev
+
+#DataBase Connection
+=> Using mongodb
+=> Files
+=> Creating .env file for connection link and make it private
+=> then create databaseConnection.js file in which we create a function for connecting database.
+=> Commands
+((Index.js))
+=> const dotenv = require("dotenv");
+=> dotenv.config();
+=> DbConnection();
+((databaseConnection.js))
+=> const mongoose = require("mongoose");
+=> const db = mongoose.connection;
+db.on("error", (error) => {
+console.log("Error connecting to database", error);
+});
+db.once("open", function () {
+console.log("Connected to database successfully");  
+ });
+=>function DbConnection() {
+const DB_URL = process.env.MONGO_URI;
+mongoose.connect(DB_URL, {
+useNewUrlParser: true,
+useUnifiedTopology: true,
+});
+}
+=> module.exports = DbConnection;
