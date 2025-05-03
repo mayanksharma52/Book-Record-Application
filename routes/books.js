@@ -181,8 +181,8 @@ router.get("/withFine/ofBook", (req, res) => {
     .map((user) => {
       const returnDate = getDateInDays(user.returnDate);
       const subscriptionExpiry = getSubscriptionExpiry(
-        user.subscriptionDate,
-        user.subscriptionType
+      user.subscriptionDate,
+      user.subscriptionType
       );
 
       const book = books.find(
