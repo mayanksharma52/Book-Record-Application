@@ -2,7 +2,7 @@ const express = require("express");
 
 const dotenv = require("dotenv");
 
-const DbConnection = require("./databaseConnection.js");
+const DbConnection = require("./databaseConnection");
 
 const usersRoutes = require("./routes/users.js");
 

@@ -89,3 +89,23 @@ useUnifiedTopology: true,
 });
 }
 => module.exports = DbConnection;
+
+MVC Arch : controller
+
+> > M:Model (It depicts the structure of the mongodb)
+> > V: View (React js fromtend)
+> > C:Controller (brain or logical part of route)
+> > books.controllers.js
+> > users.controllers.js
+
+Schema>> (Schema is initialize in a )
+id:string
+name:string
+age:number
+Gender:char || varchar(15)
+
+model>>
+id:123
+name: Devtown
+age:23
+gender:'M'
