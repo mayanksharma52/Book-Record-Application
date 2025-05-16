@@ -6,6 +6,13 @@ const { users } = require("../data/users.json");
 
 const router = express.Router();
 
+const { book, user } = require("../models/index.js");
+
+const {
+  getAllUser,
+  getUserById,
+} = require("../controllers/books.controllers.js");
+
 /**
  * Routes Created /books
  * method: Get
@@ -181,8 +188,8 @@ router.get("/withFine/ofBook", (req, res) => {
     .map((user) => {
       const returnDate = getDateInDays(user.returnDate);
       const subscriptionExpiry = getSubscriptionExpiry(
-      user.subscriptionDate,
-      user.subscriptionType
+        user.subscriptionDate,
+        user.subscriptionType
       );
 
       const book = books.find(

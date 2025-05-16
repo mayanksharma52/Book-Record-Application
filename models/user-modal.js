@@ -17,12 +17,12 @@ const userSchema = new Schema(
       required: true,
       unique: true,
     },
-    isIssueBook: {
-      type: Number,
-      required: true,
-      default: 0,
+    isIssuedBook: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false,
+      ref: "Book",
     },
-    isIssueData: {
+    isIssuedData: {
       type: Date,
       required: true,
     },
